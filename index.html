@@ -9,120 +9,95 @@
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGNaY4HG_l1gaa92OT0TSrWQmOBOFOqdk&libraries=places"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Begining of the jumbotron -->
-  
-  <div class="container">
-    <div class="jumbotron imgbg">
+  <!-- beginning of jumbotron and bootstrap -->
+   <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <img class="mainLogo" src="https://s9.postimg.org/fbf2kuq33/new_Font.png" alt="beerHop logo">
+          <img id="bhLogo" src="assets/images/bhlogo.png" class="img-fluid" alt="Responsive image">
       </div>
     </div>
+    
 
     <!-- begining of the left side of the page-->
     <div class="container">
       <div class="row">
         <!--Begining of the search box area  -->
-        <div class="col-lg-6">
+        <div class="col">
           <form>
             <h1>Search</h1>
           </form>
-        </div>
+          <input id="pac-input" class="controls" type="text" placeholder="Enter Location">
+          <!-- map div  -->
+          <div id="map">
 
-        <div class="col-lg-6">
-          <form>
+          </div>
+
+        </div>
+        <div class="col">
+          <form action="http://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+            <!--Begining of the search box area  -->
             <h1>News</h1>
+            <!-- INPUT FIELD -->
+            <div class="col-lg-6">
+              <script id="newsDiv" type="text/javascript" src="http://output41.rssinclude.com/output?type=js&amp;id=1175410&amp;hash=bfdcc3ebd15fddc3c97a927370e9a3c1"></script>
+            </div>
           </form>
         </div>
       </div>
+      <!-- END OF HTML -->
+      <!--copy after here for comment section -->
 
-      <br>
-
-      <div class="row">
-        <!--Begining of the search box area  -->
-        <div class="col-lg-6 content">
-
-
-          <div class="input-group">
-            <input name="locationsearch" type="hidden">
-            <input autocomplete="on" type="text" class="form-control search" name="q" placeholder="Search Locations:" required="required">
-            <span class="input-group-btn">
-              <button class="button btn btn-secondary" type="submit"><i class="fas fa-location-arrow"></i></button>
-            </span>
-          </div>
-
-
-          <!-- <input id="pac-input" class="controls" type="text" placeholder="Enter Location">
-          <form action="http://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
-          </form> -->
-
-          <div id="map"></div>
-
-        </div>
-
-        <div class="col-lg-6 content">
-
-          <div class="input-group">
-            <input name="sitesearch" type="hidden">
-            <input autocomplete="on" type="text" class="form-control search" name="q" placeholder="Search for..." required="required">
-            <span class="input-group-btn">
-              <button class="button btn btn-secondary" type="submit"><i class="fas fa-location-arrow"></i></button>
-            </span>
-          </div>
-
-          <div class="newsDisplay">
-            Insert News Articles here!!
-          </div>
-
+      <!--place this code in a div in on the app, you can apply css and format it how you want -->
+      <div class="panel panel-default">
+        <div class="panel-heading" style="color:black;"><h1 class="text-center">Comments</h1></div>
+        <div class="panel-body">
+         <div id="flex-container">
+          <table class="table table-hover" id="beerTable">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
 
 
 
 
+
+      <div class="panel-body">   
+        <form>
+          <div class="form-group">
+            <label for="nameInput"><u>Type Username:</u></label>
+            <input class="form-control" id="nameInput" type="text">
+          </div>
+          <div class="form-group">
+            <label for="messageInput"><u>Message:</u></label>
+            <input class="form-control" id="messageInput" type="text">
+          </div>  
+          <button class="btn btn-success" id="addMessage" type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 
 
-
-
-
-
-<!--END of the search box area  -->
-<!--
-<div class="container">
-  <div class="row"> -->
-    <!-- Left side map link the api here -->
-    <!-- <div id="mapApi" class="col">
-
-
-    </div> -->
-    <!-- End Left side map link the api here -->
-    <!-- Right side map link the api here -->  
-    <!--<div id="newsApi" class="col"> -->
-      <!-- Put the api of the news in here -->
-
-
-    <!-- </div> -->
-    <!-- End Right side map link the api here -->  
-  <!-- </div>      
-</div>
-</div>
-<br>
-<br>
-<br>
-<br> -->
-
-<!-- END OF HTML -->
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZjEXEcd5XLk0iMaGisGVJrCODRKekaxw&libraries=places&callback=initAutocomplete" async defer></script>
-
-<script src="map.js"></script>
-<script src="beerHop.js"></script>
-<script src="news.js"></script>
+<!-- Beer finder API -->
+<!-- KEY:  6025a5af2ba200e2b816482dc3fe16e1 -->
+<script src="http://beermapping.com/webservice/loccity/API_KEY/lyons,co" async defer></script>
+<script src="assets/javascript/map.js"></script>
+<!-- <script src="spotify.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="assets/javascript/comments.js"></script>
 
 </body>
 </html>

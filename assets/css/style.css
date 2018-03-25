@@ -1,0 +1,63 @@
+body{
+  background-color: lightgrey;
+}
+
+
+.fa-location-arrow{
+  color: lightgreen;
+  height: 5%;
+}
+
+#rssincl-box-1175410 {
+  height: 60%;
+  margin: 0px;
+}
+
+
+
+.mainLogo{
+  margin-top: -5%;
+  margin-left: 15%;
+  position: static;
+}
+
+.container{
+  text-align: center;
+}
+form{
+  position: relative;
+}
+
+#flex-container {
+display: flex;
+}
+
+#mapApi{
+  height: 400px;
+  width: 400px;
+}
+
+#map {
+    height: 60%;
+    width: 100%;
+    margin: 0px;
+  }
+
+form {
+  margin: 0px;
+}
+
+ #pac-input{
+  height: 10%;
+  width: 50%;
+  font-size: 20px;
+ }
+
+
+
+#newsDiv{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px !important;
+
+}
