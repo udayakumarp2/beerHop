@@ -1,117 +1,120 @@
+
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>beerHop</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGNaY4HG_l1gaa92OT0TSrWQmOBOFOqdk&libraries=places"></script>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
-  <!-- beginning of jumbotron and bootstrap -->
-   <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-          <img id="bhLogo" src="assets/images/bhlogo.png" class="img-fluid" alt="Responsive image">
-      </div>
-    </div>
-    
-
-    <!-- begining of the left side of the page-->
-    <div class="container">
-      <div class="row">
-        
-        <div class="col">
-          
-          <div><h3>Richmond Breweries Map!</h3></div>
-          <!-- map div  -->
-          <div id="map">
-
-          </div>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beerHop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGNaY4HG_l1gaa92OT0TSrWQmOBOFOqdk&libraries=places"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  </head>
+  <body>
+    <!-- beginning of jumbotron and bootstrap -->
+     <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <img id="bhLogo" src="assets/images/bhlogo.png" class="img-fluid" alt="Responsive image">
         </div>
-        <div class="col">
-          <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
-            <!--Begining of the search box area  -->
-            <h1>News</h1>
-            <!-- INPUT FIELD -->
-            <div class="col-lg-6">
-              <script id="newsDiv" type="text/javascript" src="https://output41.rssinclude.com/output?type=js&amp;id=1175410&amp;hash=bfdcc3ebd15fddc3c97a927370e9a3c1"></script>
+      </div>
+      
+  
+      <!-- begining of the left side of the page-->
+      <div class="container">
+        <div class="row">
+          
+          <div class="col">
+            
+            <div><h3>Richmond Breweries Map!</h3></div>
+            <!-- map div  -->
+            <div id="map">
+  
+            </div>
+  
+          </div>
+          <div class="col">
+            <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+              <!--Begining of the search box area  -->
+              <h1>News</h1>
+              <!-- INPUT FIELD -->
+              <div class="col-lg-6">
+                <div class="feedgrabbr_widget" id="fgid_6d81ec706c2accbb7dadce304"></div>
+               <script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array(); fg_widgets.push("fgid_6d81ec706c2accbb7dadce304");</script>
+               <script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- END OF HTML -->
+        <!--copy after here for comment section -->
+  
+        <!--place this code in a div in on the app, you can apply css and format it how you want -->
+        <div class="panel panel-default">
+          <div class="panel-heading" style="color:black;"><h1 class="text-center">Comments</h1></div>
+          <div class="panel-body">
+           <div id="flex-container">
+            <table class="table table-hover" id="beerTable">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  
+  
+  
+  
+  
+        <div class="panel-body">   
+          <form>
+            <div class="form-group">
+              <label for="nameInput"><u>Type Username:</u></label>
+              <input class="form-control" class="form-control" id="nameInput" placeholder="username" required>
+            </div>
+            <div class="form-group">
+              <label for="messageInput"><u>Message:</u></label>
+              <input class="form-control" id="messageInput" type="text">
+            </div>  
+            <button class="btn btn-success" id="addMessage" type="submit">Submit</button>
+            <a href="#modal" class="modal-trigger">Instructions</a>
+  
+            <div class="modal" id="modal">
+              <div class="modal__dialog">
+                <section class="modal__content">
+                  <header class="modal__header">
+                    <h2 class="modal__title">beerHop comments instructions:</h2>
+                    <a href="#" class="modal__close">&times;</a>
+                  </header>
+                  <div class="modal__body">
+                    <img src="assets/images/smile.jpg" alt="modal image" class="modal__image">
+                    <p class="modal__text">Share your love of beer! Create a username and message and click <b>submit!</b></p>
+                  </div>
+                  <footer class="modal__footer">
+                  </footer>
+                </section>
+              </div>
             </div>
           </form>
         </div>
       </div>
-      <!-- END OF HTML -->
-      <!--copy after here for comment section -->
-
-      <!--place this code in a div in on the app, you can apply css and format it how you want -->
-      <div class="panel panel-default">
-        <div class="panel-heading" style="color:black;"><h1 class="text-center">Comments</h1></div>
-        <div class="panel-body">
-         <div id="flex-container">
-          <table class="table table-hover" id="beerTable">
-            <thead>
-              <tr>
-                <th>Username</th>
-                <th>Message</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="panel-body">   
-        <form>
-          <div class="form-group">
-            <label for="nameInput"><u>Type Username:</u></label>
-            <input class="form-control" class="form-control" id="nameInput" placeholder="username" required>
-          </div>
-          <div class="form-group">
-            <label for="messageInput"><u>Message:</u></label>
-            <input class="form-control" id="messageInput" type="text">
-          </div>  
-          <button class="btn btn-success" id="addMessage" type="submit">Submit</button>
-          <a href="#modal" class="modal-trigger">Instructions</a>
-
-          <div class="modal" id="modal">
-            <div class="modal__dialog">
-              <section class="modal__content">
-                <header class="modal__header">
-                  <h2 class="modal__title">beerHop comments instructions:</h2>
-                  <a href="#" class="modal__close">&times;</a>
-                </header>
-                <div class="modal__body">
-                  <img src="assets/images/smile.jpg" alt="modal image" class="modal__image">
-                  <p class="modal__text">Share your love of beer! Create a username and message and click <b>submit!</b></p>
-                </div>
-                <footer class="modal__footer">
-                </footer>
-              </section>
-            </div>
-          </div>
-        </form>
-      </div>
     </div>
   </div>
-</div>
-
-
-
-<script src="assets/javascript/map.js"></script>
-<!-- <script src="spotify.js"></script> -->
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-<script src="assets/javascript/comments.js"></script>
-
-</body>
-</html>
+  
+  
+  
+  <script src="assets/javascript/map.js"></script>
+  <!-- <script src="spotify.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  <script src="assets/javascript/comments.js"></script>
+  
+  </body>
+  </html>
