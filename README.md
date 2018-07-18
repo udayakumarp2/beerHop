@@ -9,5 +9,5 @@
 ![capture2](https://user-images.githubusercontent.com/31020465/41065743-9e017440-69ad-11e8-8859-ea29b4ebe158.PNG)
 - Google firebase is used to log the users comments 
 
-### Here is the link 
+### Here is the link:
 https://udayakumarp2.github.io/beerHop/
